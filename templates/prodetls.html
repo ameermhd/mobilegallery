@@ -1,0 +1,25 @@
+{% extends 'navbar.html' %}
+{% load static %}
+                                  {% block content %}
+
+
+                        <img src="{{pr.img.url}}"  alt="About image" style="height:500px;width:275px;">
+
+                </div>
+                <article>
+                    <h2>{{pr.name}}</h2>
+                    <p>{{pr.desc}}</p>
+                    <p>price:{{pr.price}}</p>
+                    <p>stock left:<b>{{pr.stock}}</b></p>
+
+                    <a href="{% url 'addcart' pr.id %}" class="tm-btn tm-btn-1 tm-link-to-services">Add To Cart</a>
+                </article>
+                <br>
+            </div>
+        </section>
+
+
+</body>
+</html>
+{% endblock %}
+

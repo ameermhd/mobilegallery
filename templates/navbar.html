@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>welcome to mobile gallery online store</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'hm/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<!--
+
+TemplateMo 546 Sixteen Clothing
+
+https://templatemo.com/tm-546-sixteen-clothing
+
+-->
+
+
+    <link rel="stylesheet" href="{% static 'hm/assets//css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'hm/assets//css/templatemo-sixteen.css' %}">
+    <link rel="stylesheet" href="{% static 'hm/assets//css/owl.css' %}">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+            {% for i in ct %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{i.get_url}}">{{i.name}}</a>
+        {% endfor %}
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+    </ul>
+    <form action="{% url 'serch' %}" class="form-inline my-2 my-lg-0" method="get">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" name="q">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+</html>
